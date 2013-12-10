@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root package="com.taobao.itest.test.data" class="ItestDataSetFileTest">
+	<testcase method="test_file" env="daily">
+		<record block="1" run="false">
+			<parameter orderid="1" name="id" value="1"></parameter>
+			<parameter orderid="2" name="tel" value="13456990006"></parameter>
+			<parameter orderid="3" name="message" value="普通字符串"></parameter>
+		</record>
+		<record block="2">
+			<parameter orderid="1" name="id" value="2"></parameter>
+			<parameter orderid="2" name="tel" value="15838356555"></parameter>
+			<parameter orderid="3" name="message" >{key:'stop01',data:[vmname:'AY1323231208',time:132323]}</parameter>
+		</record>
+		<record block="3" run="false">
+			<parameter orderid="1" name="id" value="3"></parameter>
+			<parameter orderid="2" name="tel" value="16838356555"></parameter>
+			<parameter orderid="3" name="message" ><![CDATA[<div id="cool">我是div</div>]]></parameter>
+		</record>
+	</testcase>
+</root>

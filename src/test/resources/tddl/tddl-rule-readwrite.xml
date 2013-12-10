@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="gb2312"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="root" class="com.taobao.itest.tb.tddl.AppRule">
+		<property name="rootMap">
+			<map>
+				<entry key="master" value-ref="readwriteRule"/>
+			</map>
+		</property>
+	</bean>
+
+	<!-- ============================================================================ -->
+	<!-- == 只有一个库，一个dbindex对应到一个数据库组包含读写库的分库方法  == -->
+	<!-- ============================================================================ -->
+	<bean id="readwriteRule" class="com.taobao.itest.tb.tddl.ShardRule">
+		<property name="tableRules">
+            <map>
+                  <!--虚拟表名 to 分表规则的映射-->
+                <entry key="user" value-ref="userRule" /> <!--分库分表,这里的key为sheetName--> 
+            </map>
+		</property>
+	</bean>
+    <bean id="userRule" class="com.taobao.itest.tb.tddl.TableRule">
+    	<!--property name="logicTableName" value="group_group_thread" /--> <!--不定义，则默认为key是logicTableName-->
+        <property name="dbIndexes" value="db1,db2" />  
+		<property name="dbRules" value="[#id#.longValue()]%4/2"/><!-- 多个库 -->
+		<property name="tbRules" value=" [#id#.longValue()]%2"/> <!-- 每库多少个个表 -->
+		<property name="tbSuffix" value="throughAllDB:[_0000-_0003]"/>
+    </bean>
+</beans>

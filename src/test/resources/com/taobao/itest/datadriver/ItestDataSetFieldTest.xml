@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--使用XML做数据驱动支持如下类型的自动转换：java.lang.Boolean, char, java.lang.Long, java.sql.Timestamp, java.lang.Float, long, float, short, java.lang.Double, byte, java.lang.Character, java.lang.Class, java.sql.Time, boolean, java.lang.BigDecimal, java.lang.BigInteger, int, java.lang.Integer, java.lang.String, java.lang.Short, double, java.sql.Date, java.net.URL, java.io.File, java.lang.Byte。-->
+<!--每个record节点可能有一个属性run，标示改数据是否生效，为true时会执行，否则不执行，默认为true-->
+<!--如果测试数据比较复杂，可以考虑使用CDATA解决：<parameter orderid="3" name="message"><![CDATA[ <div id="cool">我是div</div> ]]></parameter>-->
+<root package="com.taobao.itest.datadriver" class="ItestDataSetFieldTest">
+  <testcase method="test_field" env="daily">
+    <record  block="1" run="true">
+      <parameter  orderid="1" name="int" value=" "/>
+    </record >
+    <record  block="2" run="false">
+      <parameter  orderid="1" name="int" value=" "/>
+    </record >
+  </testcase>
+</root>

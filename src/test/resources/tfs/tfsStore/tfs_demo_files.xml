@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GBK" ?>
+<files>
+    <file key="1" suffix=".xml"
+          href="/tfs/tfsStore/tfs_demo_files.xml" desc="log4j configuration"/>
+
+    <file key="2" suffix=".xml" desc="common text">
+        Hi 雷卷
+    </file>
+</files>

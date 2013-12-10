@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="tairManager" class="com.taobao.itest.tb.tair.mock.TairManagerXmlStoreImpl">
+	<property name="xmlStoreFiles" value="/tair/tairStore/tair_demo_entries.xml"/>
+</bean>
+</beans> 

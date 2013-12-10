@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root package="com.taobao.itest.test.data" class="ITestDataPrepareTest">
+	<DataPrepare env="daily">
+		<BeforeClass>
+			<parameter name="insert">insert into user value (14,"yufan14")</parameter>
+		</BeforeClass>
+		<AfterClass>
+			<parameter name="delete">delete from user where id =14</parameter>
+		</AfterClass>
+		<Before>
+			<parameter name="insert">insert into user value (111,"yufan111")</parameter>
+			<parameter name="insert">insert into user value (112,"yufan112")</parameter>
+		</Before>
+		<After>
+			<parameter name="delete">delete from user where id =111</parameter>
+			<parameter name="delete">delete from user where id =112</parameter>
+		</After>
+	</DataPrepare>
+</root>

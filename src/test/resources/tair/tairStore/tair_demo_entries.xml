@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="GBK" ?>
+<entries>
+    <entry key="name" namespace="1">
+        Hi 雷卷
+    </entry>
+    <entry key="groovy" namespace="1"
+           language="groovy" href="/tair/scripts/construct_user.groovy"/>//FUZ
+</entries>
